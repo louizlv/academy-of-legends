@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding" color="primary">
+  <div class="background">
+    <div class="logo ion-text-center">
+      <img class="logo" src="/assets/icon/logo.png">
+      <ion-searchbar placeholder="Pesquisar Invocador" [(ngModel)]="queryText" (ionInput)="filterPlayer($event)" clearInput>
+      </ion-searchbar>
+    </div>
+  </div>
+
+  <ion-list>
+    <ion-item no-lines *ngfor="let players of players"> 
+      <h1>{{players.nick}}</h1>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
