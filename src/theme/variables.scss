@@ -233,4 +233,32 @@
 
     --ion-card-background: #1e1e1e;
   }
+
+  @font-face {
+    font-family: 'LoL Custom Font';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../assets/fonts/myCustomFont/LoL-Font-Regular.ttf');
+  }
+  
+  @font-face {
+    font-family: 'LoL Custom Font';
+    font-style: normal;
+    font-weight: bold;
+    src: url('../assets/fonts/myCustomFont/LoL-Font-Bold.otf');
+  }
+  
+  @font-face {
+    font-family: 'LoL Custom Font';
+    font-style: italic;
+    font-weight: normal;
+    src: url('../assets/fonts/myCustomFont/LoL-Font-Italic.ttf');
+  }
+  
+  @font-face {
+    font-family: 'LoL Custom Font';
+    font-style: italic;
+    font-weight: bold;
+    src: url('../assets/fonts/myCustomFont/LoL-Font-Medium.otf');
+  }
 }
