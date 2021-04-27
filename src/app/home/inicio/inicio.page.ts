@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import _ from 'lodash';
 @Component({
   selector: 'app-inicio',
@@ -6,37 +7,36 @@ import _ from 'lodash';
   styleUrls: ['./inicio.page.scss'],
 })
 export class InicioPage {
-
-  players: Array<{ nick: string }>;
-  allplayers: any;
+  players: Array<{nome:string, tag:string}>;
+  allPlayers:any;
   queryText: string;
 
-
-  constructor() {
-    this.queryText = "";
+  constructor(){
+    this.queryText = '';
     this.players = [
-      { nick: "coomediante" },
-      { nick: "NevesGameTARG" }
+      { nome: 'Comédia', tag: '#BR1'},
+      { nome: 'LouizLV', tag: '#EUW'},
+      { nome: 'NevesGameTARG', tag: '#777'},
+      { nome: 'CabecinhaGameplays', tag: '#24'}
     ];
 
-    this.allplayers = this.players;
+    this.allPlayers = this.players;
   }
 
-  filterPlayer(play: any) {
+  filterPlayer(play: any){
     let val = play.target.value;
-    if (val && val.trim() != '') {
-      this.players = _.values(this.allplayers);
+    if (val && val.trim() != ''){
+      this.players = _.values(this.allPlayers);
       this.players = this.players.filter((player) => {
-        return (player.nick.toLowerCase().indexOf(val.toLowerCase()) > -1)
+        return (player.nome.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     } else {
-      this.players = this.allplayers;
+      this.players = null;
     }
-
-
-
-
   }
 
-
+  public inSearch = false;
+  public setinSearch(value: boolean) {
+    this.inSearch = value;
+  }
 }

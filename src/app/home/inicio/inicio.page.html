@@ -1,5 +1,5 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar  color="primary">
+  <ion-toolbar color="primary">
     <ion-title class="ion-text-center">
       <ion-text style="font-family: LoL Custom Font;">
         <h1>ACADEMY OF LEGENDS</h1>
@@ -8,19 +8,29 @@
   </ion-toolbar>
 </ion-header>
 
+<ion-toolbar>
+  <ion-searchbar animated placeholder="Pesquisar Invocador"
+    [(ngModel)]="queryText" 
+    (ionInput)="filterPlayer($event)"
+    (ionFocus)="setinSearch(true)">
+  </ion-searchbar>
+
+  <ion-button slot="start" *ngIf="inSearch" (click)="setinSearch(false)"> 
+    <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+  </ion-button>
+</ion-toolbar>
 
 <ion-content class="ion-padding" color="secondary">
-  <div class="background">
-    <div class="logo ion-text-center">
-      <img class="logo" src="/assets/icon/logo.png">
-      <ion-searchbar placeholder="Pesquisar Invocador" [(ngModel)]="queryText" (ionInput)="filterPlayer($event)" clearInput>
-      </ion-searchbar>
-    </div>
-  </div>
-
-  <ion-list>
-    <ion-item no-lines *ngfor="let players of players"> 
-      <h1>{{players.nick}}</h1>
+  <ion-list *ngIf="inSearch; else StartPage">
+    <ion-item *ngFor="let player of players">
+      <ion-label>{{player.nome}}</ion-label>
+      <ion-icon name="arrow-forward-circle"></ion-icon>
     </ion-item>
   </ion-list>
 </ion-content>
+
+<ng-template #StartPage>
+  <ion-content class="ion-padding" color="secondary">
+  <img class="logo" src="/assets/icon/logo.png">
+</ion-content>
+</ng-template>
