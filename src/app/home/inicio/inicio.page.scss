@@ -1,7 +1,23 @@
-ion-searchbar{
+ion-toolbar{
+  ion-searchbar{
     --background: #ffffff;
-    --border-radius:32px;
-    --vertical-align: middle;
-    
+    --border-radius: 12px;  
+    --clear-button-color: rgb(247, 162, 162);
+    --icon-color: grey;
+    --placeholder-color: grey;
   }
+  ion-button{
+    margin-left: 10px;
+  }
+}
+
+ion-grid{
+  ion-row{
+    ion-col{
+      img{
+        padding-top: 80px;
+      }
+    }
+  }
+}
   

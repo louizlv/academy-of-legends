@@ -20,6 +20,10 @@ const routes: Routes = [
         loadChildren: () => import('./cblol/cblol.module').then(m => m.CblolPageModule)
       },
       {
+        path: 'profile',
+        loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+      },
+      {
         path: 'inicio',
         loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
       }
