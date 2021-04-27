@@ -1,10 +1,13 @@
 ion-header{
     ion-toolbar{
+        height: 45px;
+        
         ion-button{
             color: #ffffff;
         }
         ion-label{
-            margin-left: 85px;
+            margin-left: 60px;
+            margin-top: 20px;
             font-size: 30px;
             
         }
