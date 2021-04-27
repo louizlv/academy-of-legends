@@ -11,9 +11,7 @@ Os commits estão sendo feitos seguindo o modelo de Commits Semânticos, similar
 
 build: Alterações que afetam o sistema de construção ou dependências externas (escopos de exemplo: gulp, broccoli, npm),
 
-ci: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs);
-
-docs: referem-se a inclusão ou alteração somente de arquivos de documentação;
+docs: Referem-se a inclusão ou alteração somente de arquivos de documentação;
 
 feat: Tratam adições de novas funcionalidades ou de quaisquer outras novas implantações ao código;
 
