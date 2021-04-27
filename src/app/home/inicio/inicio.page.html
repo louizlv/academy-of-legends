@@ -24,7 +24,7 @@
   <ion-list *ngIf="inSearch; else StartPage">
     <ion-item *ngFor="let player of players">
       <ion-label>{{player.nome}}</ion-label>
-      <ion-icon name="arrow-forward-circle"></ion-icon>
+      <ion-icon name="arrow-forward-circle" routerLink="/home/profile/summoner"></ion-icon>
     </ion-item>
   </ion-list>
 </ion-content>
