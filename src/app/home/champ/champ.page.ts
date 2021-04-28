@@ -9,7 +9,7 @@ export class ChampPage implements OnInit {
 
   constructor() { }
 
-  lutador ={
+  slidecamp ={
     slidesPerView: 'auto',
     concenteredSlides:true,
     spaceBetween: 10
