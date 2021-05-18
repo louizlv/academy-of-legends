@@ -13,7 +13,7 @@ build: Alterações que afetam o sistema de construção ou dependências extern
 
 docs: Referem-se a inclusão ou alteração somente de arquivos de documentação;
 
-feat: Tratam adições de novas funcionalidades ou de quaisquer outras novas implantações ao código;
+feature: Tratam adições de novas funcionalidades ou de quaisquer outras novas implantações ao código;
 
 fix: Essencialmente definem o tratamento de correções de bugs;
 
