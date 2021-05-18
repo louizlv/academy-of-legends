@@ -2,7 +2,7 @@
   <ion-toolbar color="primary">
     <ion-row>
       <ion-col size="3">
-        <ion-button size="default" fill="clear" (click)="onClick(favorite=!favorite)" (click)="onClick(favChamps.push(champhere))">
+        <ion-button size="default" fill="clear" (click)="favorite=!favorite" (click)="addFavorite()">
           <ion-icon slot="icon-only" [name]="favorite? 'star' : 'star-outline'" color="warning"></ion-icon>
         </ion-button>
       </ion-col>
@@ -59,12 +59,11 @@
 
       <ion-row>
         <ion-avatar>
-            <img src="https://ddragon.leagueoflegends.com/cdn/11.8.1/img/spell/AatroxE.png">
-          </ion-avatar>
-       <ion-label>AVANÇO UMBRAL</ion-label>
+          <img src="https://ddragon.leagueoflegends.com/cdn/11.8.1/img/spell/AatroxE.png">
+        </ion-avatar>
+       <ion-label>E - AVANÇO UMBRAL</ion-label>
         <ion-label>Passivamente, Aatrox se cura quando causa dano a Campeões inimigos. Quando ativado, ele avança em uma direção.
-        Aatrox libera sua forma demoníaca, aterrorizando tropas inimigas próximas, ganhando Dano de Ataque, cura aumentada e Velocidade de Movimento. Se ele conseguir um abate, este efeito é estendido.
-        </ion-label>
+        Aatrox libera sua forma demoníaca, aterrorizando tropas inimigas próximas, ganhando Dano de Ataque, cura aumentada e Velocidade de Movimento. Se ele conseguir um abate, este efeito é estendido.</ion-label>
       </ion-row>
 
       <ion-col>

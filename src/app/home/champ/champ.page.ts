@@ -7,9 +7,11 @@ import { FavchampsService } from 'src/app/services/favchamps.service';
   styleUrls: ['./champ.page.scss'],
 })
 export class ChampPage implements OnInit {
+  champfav: Array<{nome:string, photo:string, link:string}>;
 
-  public favChamps = this.favchampsService.favChamps;
-  constructor(private favchampsService: FavchampsService) { }
+  constructor(private favchampsService: FavchampsService) {
+    this.champfav = this.favchampsService.favoritados;
+   }
 
   slidecamp ={
     slidesPerView: 'auto',

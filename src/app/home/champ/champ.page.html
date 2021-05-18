@@ -14,7 +14,7 @@
       <ion-title style="font-family: bold LoL Custom Font;">FAVORITOS</ion-title>
     </ion-col>
     <ion-slides [options]="slidecamp" class="ion-margin-top">
-      <ion-slide *ngFor="let champ of favChamps">
+      <ion-slide *ngFor="let champ from champfav">
         <ion-card routerLink={{champ.link}}>
           <img src={{champ.photo}}>
           <div><span>{{champ.nome}}</span></div> 
