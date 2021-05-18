@@ -1,9 +1,18 @@
 <ion-header>
   <ion-toolbar color="primary">
-      <ion-button slot="end" size="default" fill="clear" routerLink="/home/champ">
-        <ion-icon slot="icon-only" name="close-circle"></ion-icon>
-      </ion-button>
-      <ion-label style="font-family: bold LoL Custom Font;" class="ion-text-center">AATROX</ion-label>
+    <ion-row>
+      <ion-col size="3">
+        <ion-button size="default" fill="clear" (click)="onClick()">
+          <ion-icon slot="icon-only" name="star"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-text style="font-family: bold LoL Custom Font;">AATROX</ion-text>
+      </ion-col>
+    </ion-row>
+        <ion-button slot="end" size="default" fill="clear" routerLink="/home/champ">
+          <ion-icon slot="icon-only" name="close-circle"></ion-icon>
+        </ion-button>
   </ion-toolbar>
 </ion-header>
 <ion-content color="primary">

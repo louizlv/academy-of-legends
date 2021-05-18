@@ -28,12 +28,7 @@ const routes: Routes = [
         loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
       }
     ]
-  },  {
-    path: 'ahri',
-    loadChildren: () => import('./cham/ahri/ahri.module').then( m => m.AhriPageModule)
   },
-
-  
 ];
 
 @NgModule({
