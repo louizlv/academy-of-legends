@@ -6,12 +6,13 @@ import { Storage } from '@ionic/storage-angular';
   templateUrl: './champ.page.html',
   styleUrls: ['./champ.page.scss'],
 })
-export class ChampPage implements OnInit {
+export class ChampPage {
 
   champfav:any;
   nome:string;
   photo:string;
   link:string;
+  isFavorite:boolean;
 
   constructor(private storage: Storage) {
     this.storage.get('favorites')
@@ -21,7 +22,7 @@ export class ChampPage implements OnInit {
       this.nome = res.nome,
       this.photo = res.photo,
       this.link = res.link,
-      console.log(this.champfav + ' ' + this.nome + ' ' + this.photo + ' ' + this.link)
+      this.link != null? this.isFavorite = true: this.isFavorite = false
       }) 
    }
 
@@ -30,8 +31,5 @@ export class ChampPage implements OnInit {
     concenteredSlides:true,
     spaceBetween: 10
   };
-
-  ngOnInit() {
-  }
 
 }

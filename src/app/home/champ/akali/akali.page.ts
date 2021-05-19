@@ -21,7 +21,6 @@ export class AkaliPage {
     this.favchampsService.favoritados.length = 0;
     this.favchampsService.favoritados.push(this.champhere);
     this.favchampsService.update();
-    console.log(this.favchampsService.favoritados)
   }
 
 }

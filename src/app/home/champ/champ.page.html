@@ -9,6 +9,7 @@
 </ion-header>
 
 <ion-content class="card-background-page" class="no-scroll" color="secondary">
+    <div *ngIf="isFavorite">
     <ion-col>
       <ion-title style="font-family: bold LoL Custom Font;">CAMPEÃO FAVORITO</ion-title>
     </ion-col>
@@ -16,6 +17,7 @@
       <img src="{{this.photo}}"/>
       <div class="ion-text-center">{{this.nome}}</div>
     </ion-card>
+    </div>
 
     <ion-col>
       <ion-title style="font-family: bold LoL Custom Font;">ASSASSINOS</ion-title>
