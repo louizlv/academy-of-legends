@@ -11,14 +11,14 @@ export class AatroxPage {
   public champhere;
   
   constructor(private favchampsService: FavchampsService) {
-      this.champhere = [
+      this.champhere = 
         {nome: 'AATROX', 
-        photo: 'https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/266.png', 
-        link: '/home/champ/aatrox'},
-      ]; 
+        photo: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg', 
+        link: '/home/champ/aatrox'}; 
   }
 
   public addFavorite() {
+    this.favchampsService.favoritados.length = 0;
     this.favchampsService.favoritados.push(this.champhere);
     this.favchampsService.update();
     console.log(this.favchampsService.favoritados)

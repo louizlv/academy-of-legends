@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FavchampsService } from 'src/app/services/favchamps.service';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-champ',
@@ -7,10 +7,22 @@ import { FavchampsService } from 'src/app/services/favchamps.service';
   styleUrls: ['./champ.page.scss'],
 })
 export class ChampPage implements OnInit {
-  champfav: Array<{nome:string, photo:string, link:string}>;
 
-  constructor(private favchampsService: FavchampsService) {
-    this.champfav = this.favchampsService.favoritados;
+  champfav:any;
+  nome:string;
+  photo:string;
+  link:string;
+
+  constructor(private storage: Storage) {
+    this.storage.get('favorites')
+    .then((res:any) => {
+      res = res[0]
+      this.champfav = res,
+      this.nome = res.nome,
+      this.photo = res.photo,
+      this.link = res.link,
+      console.log(this.champfav + ' ' + this.nome + ' ' + this.photo + ' ' + this.link)
+      }) 
    }
 
   slidecamp ={

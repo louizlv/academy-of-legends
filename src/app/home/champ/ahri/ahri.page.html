@@ -2,7 +2,7 @@
   <ion-toolbar color="primary">
     <ion-row>
       <ion-col size="3">
-        <ion-button size="default" fill="clear" (click)="onClick(favorite=!favorite)" (click)="onClick(favChamps.push(champhere))">
+        <ion-button size="default" fill="clear" (click)="favorite=!favorite" (click)="addFavorite()">
           <ion-icon slot="icon-only" [name]="favorite? 'star' : 'star-outline'" color="warning"></ion-icon>
         </ion-button>
       </ion-col>
@@ -21,7 +21,9 @@
     <ion-card-header>
     </ion-card-header>
     <ion-card-content style="font-family: bold LoL Custom Font;" color="secondary">
-      Naturalmente ligada à magia do reino espiritual, Ahri é uma vastayesa misteriosa, com traços de raposa, que busca seu lugar no mundo. Após se tornar uma predadora um tanto relutante e empática em relação aos mortais, hoje ela prefere manipular as emoções de suas presas antes de sugar suas essências vitais, pois assim recebe lampejos de memórias e visões de cada alma que consome.
+      Naturalmente ligada à magia do reino espiritual, Ahri é uma vastayesa misteriosa, com traços de raposa, que busca seu lugar no mundo.
+      Após se tornar uma predadora um tanto relutante e empática em relação aos mortais, hoje ela prefere manipular as emoções
+      de suas presas antes de sugar suas essências vitais, pois assim recebe lampejos de memórias e visões de cada alma que consome.
       <ion-col>
         <h1>_________________________</h1>
       </ion-col>
@@ -30,15 +32,11 @@
       </ion-col>
 
       <ion-row>
-        <i-col>
-          <ion-avatar slot="start">
-            <img src="https://ddragon.leagueoflegends.com/cdn/11.10.1/img/spell/AhriOrbofDeception.png">
-          </ion-avatar>
-        </i-col>
+        <ion-avatar>
+          <img src="https://ddragon.leagueoflegends.com/cdn/11.10.1/img/spell/AhriOrbofDeception.png">
+        </ion-avatar>       
        <ion-label>Q - ORBE DA ILUSÃO</ion-label>
-       <i-col>
          <ion-label>Ahri lança e puxa de volta seu orbe, causando Dano Mágico na ida e Dano Verdadeiro na volta.</ion-label>
-       </i-col>
       </ion-row>
 
       <ion-col>
@@ -46,15 +44,11 @@
       </ion-col>
 
       <ion-row>
-        <i-col>
-          <ion-avatar slot="start">
-            <img src="https://ddragon.leagueoflegends.com/cdn/11.10.1/img/spell/AhriFoxFire.png">
-          </ion-avatar>
-        </i-col>
-       <ion-label>W - FOGO DE RAPOSA</ion-label>
-       <i-col>
-         <ion-label>Ahri recebe um breve impulso de Velocidade de Movimento e lança três Fogos de Raposa que perseguem e atacam inimigos próximos.</ion-label>
-       </i-col>
+        <ion-avatar>
+          <img src="https://ddragon.leagueoflegends.com/cdn/11.10.1/img/spell/AhriFoxFire.png">
+        </ion-avatar>
+      <ion-label>W - FOGO DE RAPOSA</ion-label>
+        <ion-label>Ahri recebe um breve impulso de Velocidade de Movimento e lança três Fogos de Raposa que perseguem e atacam inimigos próximos.</ion-label>
       </ion-row>
 
       <ion-col>
@@ -62,16 +56,11 @@
       </ion-col>
 
       <ion-row>
-        <i-col>
-          <ion-avatar slot="start">
-            <img src="https://ddragon.leagueoflegends.com/cdn/11.10.1/img/spell/AhriSeduce.png">
-          </ion-avatar>
-        </i-col>
-       <ion-label>E - ENCANTO</ion-label>
-       <i-col>
-         <ion-label>Ahri manda um beijo que causa dano e encanta um inimigo, interrompendo imediatamente qualquer habilidade de movimento em progresso e fazendo com que ele ande inofensivamente em sua direção. O alvo temporariamente sofre dano aumentado de Ahri.
-          </ion-label>
-       </i-col>
+        <ion-avatar>
+          <img src="https://ddragon.leagueoflegends.com/cdn/11.10.1/img/spell/AhriSeduce.png">
+        </ion-avatar>
+      <ion-label>E - ENCANTO</ion-label>
+         <ion-label>Ahri manda um beijo que causa dano e encanta um inimigo, interrompendo imediatamente qualquer habilidade de movimento em progresso e fazendo com que ele ande inofensivamente em sua direção. O alvo temporariamente sofre dano aumentado de Ahri.</ion-label>
       </ion-row>
 
       <ion-col>
@@ -79,15 +68,11 @@
       </ion-col>
 
       <ion-row>
-        <i-col>
-          <ion-avatar slot="start">
-            <img src="https://ddragon.leagueoflegends.com/cdn/11.10.1/img/spell/AhriTumble.png">
-          </ion-avatar>
-        </i-col>
+        <ion-avatar>
+          <img src="https://ddragon.leagueoflegends.com/cdn/11.10.1/img/spell/AhriTumble.png">
+        </ion-avatar>
        <ion-label>R - ÍMPETO ESPIRITUAL</ion-label>
-       <i-col>
          <ion-label>Ahri avança e atira raios de essência, causando dano a inimigos próximos. Ímpeto Espiritual pode ser conjurado até três vezes antes de entrar em Tempo de Recarga.</ion-label>
-       </i-col>
       </ion-row>
 
       <ion-col>
@@ -95,15 +80,11 @@
       </ion-col>
 
       <ion-row>
-        <i-col>
-          <ion-avatar slot="start">
-            <img src="https://ddragon.leagueoflegends.com/cdn/11.10.1/img/passive/Ahri_SoulEater2.png">
-          </ion-avatar>
-        </i-col>
+        <ion-avatar>
+          <img src="https://ddragon.leagueoflegends.com/cdn/11.10.1/img/passive/Ahri_SoulEater2.png">
+        </ion-avatar>
        <ion-label>P - FURTO DE ESSÊNCIA</ion-label>
-       <i-col>
          <ion-label>Quando Ahri atinge 9 inimigos com suas habilidades, sua próxima habilidade também a cura por cada inimigo atingido.</ion-label>
-       </i-col>
       </ion-row>     
     </ion-card-content>
   </ion-card>

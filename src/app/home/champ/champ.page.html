@@ -8,19 +8,14 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content color="secondary" >
-  <div>
+<ion-content class="card-background-page" class="no-scroll" color="secondary">
     <ion-col>
-      <ion-title style="font-family: bold LoL Custom Font;">FAVORITOS</ion-title>
+      <ion-title style="font-family: bold LoL Custom Font;">CAMPEÃO FAVORITO</ion-title>
     </ion-col>
-    <ion-slides [options]="slidecamp" class="ion-margin-top">
-      <ion-slide *ngFor="let champ from champfav">
-        <ion-card routerLink={{champ.link}}>
-          <img src={{champ.photo}}>
-          <div><span>{{champ.nome}}</span></div> 
-        </ion-card>
-      </ion-slide>
-    </ion-slides>
+    <ion-card class="favorite" routerLink="{{this.link}}">
+      <img src="{{this.photo}}"/>
+      <div class="ion-text-center">{{this.nome}}</div>
+    </ion-card>
 
     <ion-col>
       <ion-title style="font-family: bold LoL Custom Font;">ASSASSINOS</ion-title>
@@ -237,6 +232,4 @@
         </ion-card>
       </ion-slide>
     </ion-slides>
-  </div>
-
 </ion-content>
