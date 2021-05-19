@@ -2,8 +2,8 @@
   <ion-toolbar color="primary">
     <ion-row>
       <ion-col size="3">
-        <ion-button size="default" fill="clear" (click)="onClick()">
-          <ion-icon slot="icon-only" name="star"></ion-icon>
+        <ion-button size="default" fill="clear" (click)="favorite=!favorite" (click)="addFavorite()">
+          <ion-icon slot="icon-only" [name]="favorite? 'star' : 'star-outline'" color="warning"></ion-icon>
         </ion-button>
       </ion-col>
       <ion-col>
@@ -30,15 +30,11 @@
       </ion-col>
 
       <ion-row>
-        <i-col>
-          <ion-avatar slot="start">
-            <img src="https://ddragon.leagueoflegends.com/cdn/11.10.1/img/spell/AkaliQ.png">
-          </ion-avatar>
-        </i-col>
+        <ion-avatar>
+          <img src="https://ddragon.leagueoflegends.com/cdn/11.10.1/img/spell/AkaliQ.png">
+        </ion-avatar>
        <ion-label>Q - GOLPE DOS CINCO PONTOS</ion-label>
-       <i-col>
          <ion-label>Akali atira cinco kunais, causando redução de velocidade e dano com base em seu Dano de Ataque adicional e Poder de Habilidade.</ion-label>
-       </i-col>
       </ion-row>
 
       <ion-col>
@@ -46,15 +42,11 @@
       </ion-col>
 
       <ion-row>
-        <i-col>
-          <ion-avatar slot="start">
+          <ion-avatar>
             <img src="https://ddragon.leagueoflegends.com/cdn/11.10.1/img/spell/AkaliW.png">
           </ion-avatar>
-        </i-col>
        <ion-label>W - PROTEÇÃO DO CREPÚSCULO</ion-label>
-       <i-col>
          <ion-label>Akali solta uma proteção de fumaça e recebe Velocidade de Movimento por um curto período. Enquanto estiver dentro da proteção, Akali se torna invisível e não pode ser selecionada como alvo de habilidades e ataques inimigos. Atacar ou usar habilidades fará com que ela seja revelada brevemente.</ion-label>
-       </i-col>
       </ion-row>
 
       <ion-col>
@@ -62,32 +54,22 @@
       </ion-col>
 
       <ion-row>
-        <i-col>
-          <ion-avatar slot="start">
+          <ion-avatar>
             <img src="https://ddragon.leagueoflegends.com/cdn/11.10.1/img/spell/AkaliE.png">
           </ion-avatar>
-        </i-col>
        <ion-label>E - INVESTIDA SHURIKEN</ion-label>
-       <i-col>
-         <ion-label>Salta para trás e atira uma shuriken para a frente, causando Dano Mágico. O primeiro inimigo ou nuvem de fumaça que forem atingidos são marcados. Conjure novamente para avançar ao alvo marcado, causando dano adicional.
-          </ion-label>
-       </i-col>
+         <ion-label>Salta para trás e atira uma shuriken para a frente, causando Dano Mágico. O primeiro inimigo ou nuvem de fumaça que forem atingidos são marcados. Conjure novamente para avançar ao alvo marcado, causando dano adicional.</ion-label>
       </ion-row>
-
       <ion-col>
         <h1>_________________________</h1>
       </ion-col>
 
       <ion-row>
-        <i-col>
-          <ion-avatar slot="start">
+          <ion-avatar>
             <img src="https://ddragon.leagueoflegends.com/cdn/11.10.1/img/spell/AkaliR.png">
           </ion-avatar>
-        </i-col>
        <ion-label>R - EXECUÇÃO PERFEITA</ion-label>
-       <i-col>
          <ion-label>Akali salta em uma direção, causando dano aos inimigos que atingir. Conjurar novamente: Akali avança em uma direção, executando todos os inimigos que atingir.</ion-label>
-       </i-col>
       </ion-row>
 
       <ion-col>
@@ -95,15 +77,11 @@
       </ion-col>
 
       <ion-row>
-        <i-col>
           <ion-avatar slot="start">
             <img src="https://ddragon.leagueoflegends.com/cdn/11.10.1/img/passive/Akali_P.png">
           </ion-avatar>
-        </i-col>
        <ion-label>P - MARCA DO ASSASSINO</ion-label>
-       <i-col>
          <ion-label>Causar dano com habilidades em Campeões cria um círculo de energia em volta deles. Sair desse círculo fortalece o próximo ataque básico de Akali com alcance e dano adicionais.</ion-label>
-       </i-col>
       </ion-row>     
     </ion-card-content>
   </ion-card>

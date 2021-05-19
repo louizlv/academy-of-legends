@@ -2,12 +2,12 @@
   <ion-toolbar color="primary">
     <ion-row>
       <ion-col size="3">
-        <ion-button size="default" fill="clear" (click)="onClick()">
-          <ion-icon slot="icon-only" name="star"></ion-icon>
+        <ion-button size="default" fill="clear" (click)="onClick(favorite=!favorite)" (click)="onClick(favChamps.push(champhere))">
+          <ion-icon slot="icon-only" [name]="favorite? 'star' : 'star-outline'" color="warning"></ion-icon>
         </ion-button>
       </ion-col>
       <ion-col>
-        <ion-text style="font-family: bold LoL Custom Font;">Aphelios</ion-text>
+        <ion-text style="font-family: bold LoL Custom Font;">APHELIOS</ion-text>
       </ion-col>
     </ion-row>
         <ion-button slot="end" size="default" fill="clear" routerLink="/home/champ">

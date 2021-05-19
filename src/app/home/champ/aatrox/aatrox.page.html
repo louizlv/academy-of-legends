@@ -2,7 +2,7 @@
   <ion-toolbar color="primary">
     <ion-row>
       <ion-col size="3">
-        <ion-button size="default" fill="clear" (click)="onClick(favorite=!favorite)" (click)="onClick(favChamps.push(champhere))">
+        <ion-button size="default" fill="clear" (click)="favorite=!favorite" (click)="addFavorite()">
           <ion-icon slot="icon-only" [name]="favorite? 'star' : 'star-outline'" color="warning"></ion-icon>
         </ion-button>
       </ion-col>
@@ -32,7 +32,7 @@
       <ion-col class="ion-text-center">
         <h1>HABILIDADES</h1>
       </ion-col>
-
+ 
       <ion-row>
         <ion-avatar>
           <img src="https://ddragon.leagueoflegends.com/cdn/11.8.1/img/spell/AatroxQ.png">
@@ -40,11 +40,11 @@
        <ion-label>Q - A ESPADA DE DARKIN</ion-label>
          <ion-label>Aatrox bate sua espada no chão, causando Dano Físico. Ele pode bater até três vezes, cada vez em uma área de ação diferente.</ion-label>
       </ion-row>
-
+ 
       <ion-col>
         <h1>_________________________</h1>
       </ion-col>
-
+ 
       <ion-row>
         <ion-avatar>
           <img src="https://ddragon.leagueoflegends.com/cdn/11.8.1/img/spell/AatroxW.png">
@@ -52,44 +52,36 @@
        <ion-label>W - CORRENTES INFERNAIS</ion-label>
         <ion-label>Aatrox bate no chão, causando dano ao primeiro inimigo atingido. Campeões e Monstros Grandes precisam sair da área de impacto rapidamente ou serão arrastados para o centro e receberão dano novamente.</ion-label>
       </ion-row>
-
+ 
       <ion-col>
         <h1>_________________________</h1>
       </ion-col>
-
+ 
       <ion-row>
         <ion-avatar>
-            <img src="https://ddragon.leagueoflegends.com/cdn/11.8.1/img/spell/AatroxE.png">
-          </ion-avatar>
+          <img src="https://ddragon.leagueoflegends.com/cdn/11.8.1/img/spell/AatroxE.png">
+        </ion-avatar>
        <ion-label>E - AVANÇO UMBRAL</ion-label>
         <ion-label>Passivamente, Aatrox se cura quando causa dano a Campeões inimigos. Quando ativado, ele avança em uma direção.
-        Aatrox libera sua forma demoníaca, aterrorizando tropas inimigas próximas, ganhando Dano de Ataque, cura aumentada e Velocidade de Movimento. Se ele conseguir um abate, este efeito é estendido.
-        </ion-label>
+        Aatrox libera sua forma demoníaca, aterrorizando tropas inimigas próximas, ganhando Dano de Ataque, cura aumentada e Velocidade de Movimento. Se ele conseguir um abate, este efeito é estendido.</ion-label>
       </ion-row>
-
+ 
       <ion-col>
         <h1>_________________________</h1>
       </ion-col>
-
+ 
       <ion-row>
-        <i-col>
-          <ion-avatar slot="start">
-            <img src="https://ddragon.leagueoflegends.com/cdn/11.8.1/img/spell/AatroxR.png">
-          </ion-avatar>
-        </i-col>
-       <ion-label>R - ANIQUILADOR DE MUNDOS</ion-label>
-       <i-col>
         <ion-avatar>
           <img src="https://ddragon.leagueoflegends.com/cdn/11.8.1/img/spell/AatroxR.png">
         </ion-avatar>
        <ion-label>R - ANIQUILADOR DE MUNDOS</ion-label>
          <ion-label>Aatrox libera sua forma demoníaca, aterrorizando tropas inimigas próximas, ganhando Dano de Ataque, cura aumentada e Velocidade de Movimento. Se ele conseguir um abate, este efeito é estendido.</ion-label>
       </ion-row>
-
+ 
       <ion-col>
         <h1>_________________________</h1>
       </ion-col>
-
+ 
       <ion-row>
           <ion-avatar>
             <img src="https://ddragon.leagueoflegends.com/cdn/11.8.1/img/passive/Aatrox_Passive.png">
