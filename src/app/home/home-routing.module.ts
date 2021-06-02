@@ -21,19 +21,20 @@ const routes: Routes = [
       },
       {
         path: 'profile',
-        loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+        loadChildren: () => import('./profile/profile.module').then(m => m.ProfilePageModule)
       },
       {
         path: 'inicio',
-        loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
+        loadChildren: () => import('./inicio/inicio.module').then(m => m.InicioPageModule)
       }
     ]
-  },  {
+  },
+  {
     path: 'ahri',
-    loadChildren: () => import('./cham/ahri/ahri.module').then( m => m.AhriPageModule)
+    loadChildren: () => import('./cham/ahri/ahri.module').then(m => m.AhriPageModule)
   },
 
-  
+
 ];
 
 @NgModule({
