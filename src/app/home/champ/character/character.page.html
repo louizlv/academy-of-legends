@@ -6,8 +6,8 @@
           <ion-icon slot="icon-only" [name]="favorite? 'star' : 'star-outline'" color="warning"></ion-icon>
         </ion-button>
       </ion-col>
-      <ion-col>
-        <ion-text style="font-family: bold LoL Custom Font;">{{character.data.Aatrox.name}}</ion-text>
+      <ion-col *ngIf="character">
+        <ion-text style="font-family: bold LoL Custom Font;">{{character.data[currentChamp].name}}</ion-text>
       </ion-col>
     </ion-row>
         <ion-button slot="end" size="default" fill="clear" routerLink="/home/champ">
@@ -16,12 +16,12 @@
   </ion-toolbar>
 </ion-header>
 <ion-content color="primary">
-  <ion-card>
-    <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{character.data.Aatrox.id}}_0.jpg">
+  <ion-card *ngIf="character">
+    <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{character.data[currentChamp].id}}_0.jpg">
     <ion-card-header>
     </ion-card-header>
     <ion-card-content style="font-family: bold LoL Custom Font;" color="secondary">
-      {{character.data.Aatrox.lore}}
+      {{character.data[currentChamp].lore}}
       <ion-col>
         <h1>_________________________</h1>
       </ion-col>
@@ -31,16 +31,16 @@
 
       <ion-row>
         <ion-avatar>
-          <img src="https://ddragon.leagueoflegends.com/cdn/11.8.1/img/passive/Aatrox_Passive.png">
+          <img src="https://ddragon.leagueoflegends.com/cdn/11.8.1/img/passive/{{character.data[currentChamp].passive.image.full}}">
         </ion-avatar>
-      <ion-label>Passiva - {{character.data.Aatrox.passive.name}}</ion-label>
-       <ion-label>{{character.data.Aatrox.passive.description}}</ion-label>
+      <ion-label>Passiva - {{character.data[currentChamp].passive.name}}</ion-label>
+       <ion-label>{{character.data[currentChamp].passive.description}}</ion-label>
       </ion-row>
       <ion-col>
         <h1>_________________________</h1>
       </ion-col>
  
-      <div *ngFor="let skill of character.data.Aatrox.spells">
+      <div *ngFor="let skill of character.data[currentChamp].spells">
       <ion-row>
         <ion-avatar>
           <img src="https://ddragon.leagueoflegends.com/cdn/11.8.1/img/spell/{{skill.id}}.png">

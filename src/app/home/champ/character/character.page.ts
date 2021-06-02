@@ -8,9 +8,9 @@ export interface Character {
   data:    Data;
 }
 export interface Data {
-  Aatrox: Aatrox;
+  [key:string]: ChampInfo;
 }
-export interface Aatrox {
+export interface ChampInfo {
   id:          string;
   name:        string;
   title:       string;
@@ -44,8 +44,6 @@ export interface Spell {
   name:         string;
   description:  string;
 }
-
-
 @Component({
   selector: 'app-character',
   templateUrl: './character.page.html',
@@ -54,8 +52,9 @@ export interface Spell {
 export class CharacterPage {
 
   public champhere;
-  public character: Character[];
+  public character: Character;
   public currentChamp: string;
+  public champName: string;
   
   constructor(private favchampsService: FavchampsService, private http: HttpClient, private route: ActivatedRoute) {
       this.currentChamp = route.snapshot.paramMap.get('id');
@@ -66,18 +65,23 @@ export class CharacterPage {
         link: '/home/champ/aatrox'}; 
   }
 
-  public async loadChamp() {
-    const url = 'http://ddragon.leagueoflegends.com/cdn/11.11.1/data/pt_BR/champion/' + this.currentChamp + '.json';
-    console.log(url);
-    const result = await this.http.get<Character[]>(url).toPromise(); // converte em promise
-    this.character = result;
-    }
-    
   public addFavorite() {
     this.favchampsService.favoritados.length = 0;
     this.favchampsService.favoritados.push(this.champhere);
     this.favchampsService.update();
   }
+
+ public saveInfo() {
+    this.champName = this.character.data[this.currentChamp].passive.description;
+  }
+
+  public async loadChamp() {
+    const url = 'http://ddragon.leagueoflegends.com/cdn/11.11.1/data/pt_BR/champion/' + this.currentChamp + '.json';
+    console.log(url);
+    const result = await this.http.get<Character>(url).toPromise();
+    this.character = result;
+    console.log(result);
+    }
 
 }
 
