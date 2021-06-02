@@ -1,6 +1,8 @@
+
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FavchampsService } from 'src/app/services/favchamps.service';
+import { ActivatedRoute } from '@angular/router';
 
 export interface Character {
   data:    Data;
@@ -45,25 +47,28 @@ export interface Spell {
 
 
 @Component({
-  selector: 'app-aatrox',
-  templateUrl: './aatrox.page.html',
-  styleUrls: ['./aatrox.page.scss'],
+  selector: 'app-character',
+  templateUrl: './character.page.html',
+  styleUrls: ['./character.page.scss'],
 })
-export class AatroxPage {
+export class CharacterPage {
 
   public champhere;
   public character: Character[];
+  public currentChamp: string;
   
-  constructor(private favchampsService: FavchampsService, private http: HttpClient) {
+  constructor(private favchampsService: FavchampsService, private http: HttpClient, private route: ActivatedRoute) {
+      this.currentChamp = route.snapshot.paramMap.get('id');
+      this.loadChamp();
       this.champhere = 
         {nome: 'AATROX', 
         photo: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg', 
         link: '/home/champ/aatrox'}; 
-      this.loadChamp();
   }
 
   public async loadChamp() {
-    const url = 'http://ddragon.leagueoflegends.com/cdn/11.11.1/data/pt_BR/champion/Aatrox.json';
+    const url = 'http://ddragon.leagueoflegends.com/cdn/11.11.1/data/pt_BR/champion/' + this.currentChamp + '.json';
+    console.log(url);
     const result = await this.http.get<Character[]>(url).toPromise(); // converte em promise
     this.character = result;
     }
@@ -75,3 +80,4 @@ export class AatroxPage {
   }
 
 }
+

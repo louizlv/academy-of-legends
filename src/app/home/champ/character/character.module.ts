@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AkaliPageRoutingModule } from './akali-routing.module';
+import { CharacterPageRoutingModule } from './character-routing.module';
 
-import { AkaliPage } from './akali.page';
+import { CharacterPage } from './character.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AkaliPageRoutingModule
+    CharacterPageRoutingModule
   ],
-  declarations: [AkaliPage]
+  declarations: [CharacterPage]
 })
-export class AkaliPageModule {}
+export class CharacterPageModule {}

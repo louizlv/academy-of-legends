@@ -9,16 +9,8 @@ const routes: Routes = [
     component: ChampPage
   },
   {
-    path: 'aatrox',
-    loadChildren: () => import('./aatrox/aatrox.module').then( m => m.AatroxPageModule)
-  },
-  {
-    path: 'akali',
-    loadChildren: () => import('./akali/akali.module').then( m => m.AkaliPageModule)
-  },
-  {
-    path: 'ahri',
-    loadChildren: () => import('./ahri/ahri.module').then( m => m.AhriPageModule)
+    path: 'character',
+    loadChildren: () => import('./character/character.module').then( m => m.CharacterPageModule)
   }
 ];
 
