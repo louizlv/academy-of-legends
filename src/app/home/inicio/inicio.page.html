@@ -12,7 +12,8 @@
   <ion-searchbar animated placeholder="Pesquisar Invocador"
     [(ngModel)]="queryText" 
     (ionInput)="filterPlayer($event)"
-    (ionFocus)="setinSearch(true)">
+    (ionFocus)="setinSearch(true)"
+    color="medium">
   </ion-searchbar>
 
   <ion-button slot="start" *ngIf="inSearch" (click)="setinSearch(false)"> 

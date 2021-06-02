@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-row>
+      <ion-col size="3">
+        <ion-button size="default" fill="clear" (click)="favorite=!favorite" (click)="addFavorite()">
+          <ion-icon slot="icon-only" [name]="favorite? 'star' : 'star-outline'" color="warning"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col *ngIf="character">
+        <ion-text style="font-family: bold LoL Custom Font;">{{character.data[currentChamp].name}}</ion-text>
+      </ion-col>
+    </ion-row>
+        <ion-button slot="end" size="default" fill="clear" routerLink="/home/champ">
+          <ion-icon slot="icon-only" name="close-circle"></ion-icon>
+        </ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content color="primary">
+  <ion-card *ngIf="character">
+    <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{character.data[currentChamp].id}}_0.jpg">
+    <ion-card-header>
+    </ion-card-header>
+    <ion-card-content style="font-family: bold LoL Custom Font;" color="secondary">
+      {{character.data[currentChamp].lore}}
+      <ion-col>
+        <h1>_________________________</h1>
+      </ion-col>
+      <ion-col class="ion-text-center">
+        <h1>HABILIDADES</h1>
+      </ion-col>
+
+      <ion-row>
+        <ion-avatar>
+          <img src="https://ddragon.leagueoflegends.com/cdn/11.8.1/img/passive/{{character.data[currentChamp].passive.image.full}}">
+        </ion-avatar>
+      <ion-label>Passiva - {{character.data[currentChamp].passive.name}}</ion-label>
+       <ion-label>{{character.data[currentChamp].passive.description}}</ion-label>
+      </ion-row>
+      <ion-col>
+        <h1>_________________________</h1>
+      </ion-col>
+ 
+      <div *ngFor="let skill of character.data[currentChamp].spells">
+      <ion-row>
+        <ion-avatar>
+          <img src="https://ddragon.leagueoflegends.com/cdn/11.8.1/img/spell/{{skill.id}}.png">
+        </ion-avatar>
+        <ion-label>{{skill.name}}</ion-label>
+        <ion-label>{{skill.description}}</ion-label>
+      </ion-row>
+      <ion-col>
+        <h1>_________________________</h1>
+      </ion-col>
+    </div>     
+    </ion-card-content>
+  </ion-card>
+</ion-content>

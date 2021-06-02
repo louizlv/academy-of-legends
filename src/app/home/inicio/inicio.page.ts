@@ -14,12 +14,11 @@ export class InicioPage {
   constructor(){
     this.queryText = '';
     this.players = [
-      { nome: 'Comédia', tag: '#BR1'},
+      { nome: 'Caiodiass', tag: '#24'},
+      { nome: 'Comèdia', tag: '#BR1'},
       { nome: 'LouizLV', tag: '#EUW'},
-      { nome: 'NevesGameTARG', tag: '#777'},
-      { nome: 'CabecinhaGameplays', tag: '#24'}
+      { nome: 'NevesGameTARG', tag: '#777'}
     ];
-
     this.allPlayers = this.players;
   }
 

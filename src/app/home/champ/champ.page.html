@@ -8,82 +8,230 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content color="secondary" >
-  <div>
+<ion-content class="card-background-page" class="no-scroll" color="secondary">
+    <div *ngIf="isFavorite">
     <ion-col>
-      <ion-title style="font-family: bold LoL Custom Font;">LUTADORES</ion-title>
+      <ion-title style="font-family: bold LoL Custom Font;">CAMPEÃO FAVORITO</ion-title>
     </ion-col>
-    <ion-slides [options]="lutador" class="ion-margin-top">
-      <ion-slide routerLink="/home/champ/aatrox">
-        <ion-card>
-          <img src="assets/icon/campeoesLol/aatroxLutador.jpg">
-          <span>AATROX</span>
-        </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card>
-          <img src="assets/icon/campeoesLol/camilleLutador.jpg">
-          <span>CAMILLE</span>
-        </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card>
-          <img src="assets/icon/campeoesLol/dianaLutador.jpg">
-          <span>DIANNA</span>
-        </ion-card>
-      </ion-slide>
-    </ion-slides>
-  
+    <ion-card class="favorite" routerLink="{{this.link}}">
+      <img src="{{this.photo}}"/>
+      <div class="ion-text-center">{{this.nome}}</div>
+    </ion-card>
+    </div>
 
-  
     <ion-col>
       <ion-title style="font-family: bold LoL Custom Font;">ASSASSINOS</ion-title>
     </ion-col>
-    <ion-slides [options]="lutador" class="ion-margin-top">
+    <ion-slides [options]="slidecamp" class="ion-margin-top">
       <ion-slide>
-        <ion-card>
-          <img src="assets/icon/campeoesLol/ekkoAssasign.jpg">
-          <span>EKKO</span>
+          <ion-card routerLink="/home/champ/akali">
+          <img src="https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/84.png">
+          <div><span>AKALI</span></div> 
         </ion-card>
       </ion-slide>
       <ion-slide>
         <ion-card>
-          <img src="assets/icon/campeoesLol/akaliAssasign.jpg">
-          <span>AKALI</span>
+          <img src="https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/28.png">
+          <div><span>EVELYNN</span></div> 
         </ion-card>
       </ion-slide>
       <ion-slide>
         <ion-card>
-          <img src="assets/icon/campeoesLol/ahriAssign.jpg">
-          <span>AHRI</span>
+          <img src="https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/105.png">
+          <div><span>FIZZ</span></div> 
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <img src="https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/55.png">
+          <div><span>KATARINA</span></div> 
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <img src="https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/121.png">
+          <div><span>KHA'ZIX</span></div> 
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+
+    <ion-col>
+      <ion-title style="font-family: bold LoL Custom Font;">LUTADORES</ion-title>
+    </ion-col>
+    <ion-slides [options]="slidecamp" class="ion-margin-top">
+      <ion-slide> 
+        <ion-card routerLink="/home/champ/character/Aatrox">
+          <img src="https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/266.png">
+          <div><span>AATROX</span></div> 
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card routerLink="/home/champ/character/Camille">
+          <img src="https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/164.png">
+          <div><span>CAMILLE</span></div> 
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <img src="https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/122.png">
+          <div><span>DARIUS</span></div> 
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <img src="https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/131.png">
+          <div><span>DIANA</span></div> 
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <img src="https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/114.png">
+          <div><span>FIORA</span></div> 
         </ion-card>
       </ion-slide>
     </ion-slides>
   
+    <ion-col>
+      <ion-title style="font-family: bold LoL Custom Font;">TANQUE</ion-title>
+    </ion-col>
+    <ion-slides [options]="slidecamp" class="ion-margin-top">
+      <ion-slide>
+          <ion-card routerLink="/home/champ/amumu">
+          <img src="https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/32.png">
+          <div><span>AMUMU</span></div> 
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <img src="https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/31.png">
+          <div><span>CHO'GATH</span></div> 
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <img src="https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/57.png">
+          <div><span>MAOKAI</span></div> 
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <img src="https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/54.png">
+          <div><span>MALPHITE</span></div> 
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <img src="https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/516.png">
+          <div><span>ORNN</span></div> 
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  
+    <ion-col>
+      <ion-title style="font-family: bold LoL Custom Font;">MAGOS</ion-title>
+    </ion-col>
+    <ion-slides [options]="slidecamp" class="ion-margin-top">
+      <ion-slide>
+          <ion-card routerLink="/home/champ/ahri">
+          <img src="https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/103.png">
+          <div><span>AHRI</span></div> 
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <img src="https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/34.png">
+          <div><span>ANIVIA</span></div> 
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <img src="https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/1.png">
+          <div><span>ANNIE</span></div> 
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <img src="https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/99.png">
+          <div><span>LUX</span></div> 
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <img src="https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/268.png">
+          <div><span>AZIR</span></div> 
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
 
-  <ion-col>
-    <ion-title style="font-family: bold LoL Custom Font;">MAGOS</ion-title>
-  </ion-col>
-  <ion-slides [options]="lutador" class="ion-margin-top">
-    <ion-slide>
-      <ion-card>
-        <img src="assets/icon/campeoesLol/amumuMago.jpg">
-        <span>AMUMU</span>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card>
-        <img src="assets/icon/campeoesLol/orianaMago.jpg">
-        <span>ORIANA</span>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card> 
-        <img src="assets/icon/campeoesLol/jannaMago.jpg">
-        <span>JANNA</span>
-      </ion-card>
-    </ion-slide>
-  </ion-slides>
-  </div>
+    <ion-col>
+      <ion-title style="font-family: bold LoL Custom Font;">ATIRADOR</ion-title>
+    </ion-col>
+    <ion-slides [options]="slidecamp" class="ion-margin-top">
+      <ion-slide>
+          <ion-card routerLink="/home/champ/aphelios">
+          <img src="https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/523.png">
+          <div><span>APHELIOS</span></div> 
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <img src="https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/119.png">
+          <div><span>DRAVEN</span></div> 
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <img src="https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/222.png">
+          <div><span>JINX</span></div> 
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <img src="https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/145.png">
+          <div><span>KAI'SA</span></div> 
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <img src="https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/236.png">
+          <div><span>LUCIAN</span></div> 
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
 
+    <ion-col>
+      <ion-title style="font-family: bold LoL Custom Font;">SUPORTE</ion-title>
+    </ion-col>
+    <ion-slides [options]="slidecamp" class="ion-margin-top">
+      <ion-slide>
+          <ion-card routerLink="/home/champ/alistar">
+          <img src="https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/12.png">
+          <div><span>ALISTAR</span></div> 
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <img src="https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/201.png">
+          <div><span>BRAUM</span></div> 
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <img src="https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/117.png">
+          <div><span>LULU</span></div> 
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <img src="https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/235.png">
+          <div><span>SENNA</span></div> 
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <img src="https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/147.png">
+          <div><span>SERAPHINE</span></div> 
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
 </ion-content>

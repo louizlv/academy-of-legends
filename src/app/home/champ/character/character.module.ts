@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AatroxPageRoutingModule } from './aatrox-routing.module';
+import { CharacterPageRoutingModule } from './character-routing.module';
 
-import { AatroxPage } from './aatrox.page';
+import { CharacterPage } from './character.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AatroxPageRoutingModule
+    CharacterPageRoutingModule
   ],
-  declarations: [AatroxPage]
+  declarations: [CharacterPage]
 })
-export class AatroxPageModule {}
+export class CharacterPageModule {}
