@@ -25,3 +25,16 @@ ion-slide{
         }   
     }
 }
+
+.favorite{
+    img{
+        border: 5px solid grey;
+    } 
+    color: rgb(253, 226, 159);
+    font-size: 30px;
+    font-weight: bold;    
+    font-family: "bold LoL Custom Font";
+    background-color: grey;
+    border: 2px inset rgb(253, 226, 159);
+    height: 70vw;
+}

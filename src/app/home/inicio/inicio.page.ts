@@ -19,7 +19,6 @@ export class InicioPage {
       { nome: 'LouizLV', tag: '#EUW'},
       { nome: 'NevesGameTARG', tag: '#777'}
     ];
-
     this.allPlayers = this.players;
   }
 

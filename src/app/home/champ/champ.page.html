@@ -8,19 +8,16 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content color="secondary" >
-  <div>
+<ion-content class="card-background-page" class="no-scroll" color="secondary">
+    <div *ngIf="isFavorite">
     <ion-col>
-      <ion-title style="font-family: bold LoL Custom Font;">FAVORITOS</ion-title>
+      <ion-title style="font-family: bold LoL Custom Font;">CAMPEÃO FAVORITO</ion-title>
     </ion-col>
-    <ion-slides [options]="slidecamp" class="ion-margin-top">
-      <ion-slide *ngFor="let champ of favChamps">
-        <ion-card routerLink={{champ.link}}>
-          <img src={{champ.photo}}>
-          <div><span>{{champ.nome}}</span></div> 
-        </ion-card>
-      </ion-slide>
-    </ion-slides>
+    <ion-card class="favorite" routerLink="{{this.link}}">
+      <img src="{{this.photo}}"/>
+      <div class="ion-text-center">{{this.nome}}</div>
+    </ion-card>
+    </div>
 
     <ion-col>
       <ion-title style="font-family: bold LoL Custom Font;">ASSASSINOS</ion-title>
@@ -63,13 +60,13 @@
     </ion-col>
     <ion-slides [options]="slidecamp" class="ion-margin-top">
       <ion-slide> 
-        <ion-card routerLink="/home/champ/aatrox">
+        <ion-card routerLink="/home/champ/character/Aatrox">
           <img src="https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/266.png">
           <div><span>AATROX</span></div> 
         </ion-card>
       </ion-slide>
       <ion-slide>
-        <ion-card>
+        <ion-card routerLink="/home/champ/character/Camille">
           <img src="https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/164.png">
           <div><span>CAMILLE</span></div> 
         </ion-card>
@@ -237,6 +234,4 @@
         </ion-card>
       </ion-slide>
     </ion-slides>
-  </div>
-
 </ion-content>
