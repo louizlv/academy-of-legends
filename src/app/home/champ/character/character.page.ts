@@ -54,15 +54,14 @@ export class CharacterPage {
   public champhere;
   public character: Character;
   public currentChamp: string;
+
   public champName: string;
+  public champPhoto: string;
+  public champId: string;
   
   constructor(private favchampsService: FavchampsService, private http: HttpClient, private route: ActivatedRoute) {
       this.currentChamp = route.snapshot.paramMap.get('id');
       this.loadChamp();
-      this.champhere = 
-        {nome: 'AATROX', 
-        photo: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg', 
-        link: '/home/champ/aatrox'}; 
   }
 
   public addFavorite() {
@@ -71,8 +70,14 @@ export class CharacterPage {
     this.favchampsService.update();
   }
 
- public saveInfo() {
-    this.champName = this.character.data[this.currentChamp].passive.description;
+ public async saveInfo() {
+    this.champName = this.character.data[this.currentChamp].name;
+    this.champPhoto = 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/' + this.character.data[this.currentChamp].id + '_0.jpg';
+    this.champId = this.character.data[this.currentChamp].id;
+    this.champhere = 
+    {nome: this.champName, 
+    photo: this.champPhoto, 
+    link: '/home/champ/character/' + this.champId}; 
   }
 
   public async loadChamp() {
@@ -81,7 +86,8 @@ export class CharacterPage {
     const result = await this.http.get<Character>(url).toPromise();
     this.character = result;
     console.log(result);
-    }
+    this.saveInfo();
+    } 
 
 }
 
