@@ -12,10 +12,11 @@ const routes: Routes = [
     path: 'character',
     loadChildren: () => import('./character/character.module').then( m => m.CharacterPageModule)
   }
+
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ChampPageRoutingModule {}
+export class ChampPageRoutingModule { }
