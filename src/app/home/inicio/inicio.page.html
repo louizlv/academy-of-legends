@@ -9,19 +9,17 @@
 </ion-header>
 
 <ion-toolbar>
-  <ion-searchbar animated placeholder="Pesquisar Invocador"
-    [(ngModel)]="queryText" 
-    (ionInput)="filterPlayer($event)"
-    (ionFocus)="setinSearch(true)"
-    color="medium">
-  </ion-searchbar>
+  <ion-searchbar 
+    [(ngModel)]="currentSearch" (ionChange)="busca()" placeholder="Buscar Invocador"
+  ></ion-searchbar>
 
   <ion-button slot="start" *ngIf="inSearch" (click)="setinSearch(false)"> 
     <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
   </ion-button>
 </ion-toolbar>
 
-<ion-content class="ion-padding" color="secondary">
+<ion-content>
+
   <ion-list *ngIf="inSearch; else StartPage">
     <ion-item *ngFor="let player of players">
       <ion-label>{{player.nome}}</ion-label>
@@ -30,7 +28,7 @@
   </ion-list>
 </ion-content>
 
-<ng-template #StartPage>
+<ng-template #StartPage> 
   <ion-content class="ion-padding" color="secondary">
   <img class="logo" src="/assets/icon/logo.png">
 </ion-content>
