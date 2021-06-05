@@ -28,6 +28,7 @@ export class InicioPage {
             invocador:[]
           };
         }
+        console.log(this.result);
         this.loading = false;
     }
 
