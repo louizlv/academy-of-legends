@@ -9,12 +9,7 @@
 </ion-header>
 
 <ion-toolbar>
-  <ion-searchbar animated placeholder="Pesquisar Invocador"
-    [(ngModel)]="queryText" 
-    (ionInput)="filterPlayer($event)"
-    (ionFocus)="setinSearch(true)"
-    color="medium">
-  </ion-searchbar>
+  <ion-searchbar (ionChange)="buscarInvocador($event)" ></ion-searchbar>
 
   <ion-button slot="start" *ngIf="inSearch" (click)="setinSearch(false)"> 
     <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
@@ -30,7 +25,7 @@
   </ion-list>
 </ion-content>
 
-<ng-template #StartPage>
+<ng-template #StartPage> 
   <ion-content class="ion-padding" color="secondary">
   <img class="logo" src="/assets/icon/logo.png">
 </ion-content>
