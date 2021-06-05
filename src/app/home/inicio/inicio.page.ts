@@ -9,23 +9,30 @@ import { InvocadorService } from 'src/app/services/invocador.service';
   styleUrls: ['./inicio.page.scss'],
 })
 export class InicioPage {
-  invocador: apiInvocador;
+
+  public currentSearch = '';
+  public result: apiInvocador = null;
+  public loading = false;
 
 
   constructor(
-    public invocadorService: InvocadorService
+    private invocador: InvocadorService
   ) { }
-  buscarInvocador(evento: any) {
-    console.log(evento.target.value);
-    const busca = evento.target.value;
-    if (busca && busca.trim()! == '') {
-      this.invocadorService.buscarInvocador(busca).subscribe(dados => {
-        console.log(dados)
-        this.invocador = dados;
-      }
-      )
+
+    public async busca(){
+      this.loading = true;
+      try {
+        this.result = await this.invocador.buscarInvocador(this.currentSearch);
+        } catch (e){
+          this.result = {
+            invocador:[]
+          };
+        }
+        this.loading = false;
     }
-  }
+
 }
- 
+
+
+
 
