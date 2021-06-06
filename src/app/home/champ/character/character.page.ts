@@ -54,7 +54,7 @@ export class CharacterPage {
   public champhere;
   public character: Character;
   public currentChamp: string;
-
+  public favorite: boolean;
   public champName: string;
   public champPhoto: string;
   public champId: string;
@@ -65,6 +65,7 @@ export class CharacterPage {
   }
 
   public addFavorite() {
+    this.favorite = true;
     this.favchampsService.favoritados.length = 0;
     this.favchampsService.favoritados.push(this.champhere);
     this.favchampsService.update();
