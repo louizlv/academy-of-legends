@@ -15,16 +15,12 @@ export class InvocadorService {
 
   public buscarInvocador(busca: string) {
 
-    const url = `https://br1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${busca}?api_key=RGAPI-62955169-6207-41a1-b320-8a9c8b968319`
+    const url = `https://br1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${busca}?api_key=RGAPI-e0eb6e09-1b68-4703-9114-f588232614ce`
 
   
 
     return this.http.get<apiInvocador>(url).toPromise();
-  }
-
-
-
-}
+  }}
 
 
 
