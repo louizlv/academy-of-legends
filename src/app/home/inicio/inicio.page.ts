@@ -21,6 +21,7 @@ export class InicioPage {
 
     public async busca(){
       this.loading = true;
+<<<<<<< HEAD
       try {
         this.result = await this.invocador.buscarInvocador(this.currentSearch);
         } catch (e){
@@ -32,6 +33,11 @@ export class InicioPage {
         console.log(this.result);
         this.loading = false;
         
+=======
+      this.result = await this.invocador.buscarInvocador(this.currentSearch);
+      console.log(this.result);
+      this.loading = false;
+>>>>>>> 522adbc9223c88164b72f6854a210beb50d7b126
     }
 
 }
