@@ -72,7 +72,7 @@ export class CharacterPage {
 
  public async saveInfo() {
     this.champName = this.character.data[this.currentChamp].name;
-    this.champPhoto = 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/' + this.character.data[this.currentChamp].id + '_0.jpg';
+    this.champPhoto = '//ddragon.leagueoflegends.com/cdn/img/champion/splash/' + this.character.data[this.currentChamp].id + '_0.jpg';
     this.champId = this.character.data[this.currentChamp].id;
     this.champhere = 
     {nome: this.champName, 
@@ -81,7 +81,7 @@ export class CharacterPage {
   }
 
   public async loadChamp() {
-    const url = 'http://ddragon.leagueoflegends.com/cdn/11.11.1/data/pt_BR/champion/' + this.currentChamp + '.json';
+    const url = '//ddragon.leagueoflegends.com/cdn/11.11.1/data/pt_BR/champion/' + this.currentChamp + '.json';
     const result = await this.http.get<Character>(url).toPromise();
     this.character = result;
     this.saveInfo();
