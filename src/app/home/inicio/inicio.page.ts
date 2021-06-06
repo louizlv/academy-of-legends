@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import _ from 'lodash';
 import { apiInvocador } from 'src/app/modulos/apiInvocador.module';
 import { InvocadorService } from 'src/app/services/invocador.service';
 

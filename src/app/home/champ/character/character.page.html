@@ -34,7 +34,7 @@
           <img src="https://ddragon.leagueoflegends.com/cdn/11.8.1/img/passive/{{character.data[currentChamp].passive.image.full}}">
         </ion-avatar>
       <ion-label>Passiva - {{character.data[currentChamp].passive.name}}</ion-label>
-       <ion-label>{{character.data[currentChamp].passive.description}}</ion-label>
+       <ion-label>{{character.data[currentChamp].passive.description | filtroChamp }}</ion-label>
       </ion-row>
       <ion-col>
         <h1>_________________________</h1>

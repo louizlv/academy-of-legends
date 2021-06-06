@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { CharacterPageRoutingModule } from './character-routing.module';
 
 import { CharacterPage } from './character.page';
+import { PipesModule } from 'src/app/pipes/pipes.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CharacterPageRoutingModule
+    CharacterPageRoutingModule,
+    PipesModule
   ],
   declarations: [CharacterPage]
 })
