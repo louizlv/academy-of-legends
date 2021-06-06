@@ -17,7 +17,7 @@
 </ion-header>
 <ion-content color="primary">
   <ion-card *ngIf="character">
-    <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{character.data[currentChamp].id}}_0.jpg">
+    <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{character.data[currentChamp].id}}_0.jpg">
     <ion-card-header>
     </ion-card-header>
     <ion-card-content style="font-family: bold LoL Custom Font;" color="secondary">
@@ -31,7 +31,7 @@
 
       <ion-row>
         <ion-avatar>
-          <img src="https://ddragon.leagueoflegends.com/cdn/11.11.1/img/passive/{{character.data[currentChamp].passive.image.full}}">
+          <img src="http://ddragon.leagueoflegends.com/cdn/11.11.1/img/passive/{{character.data[currentChamp].passive.image.full}}">
         </ion-avatar>
       <ion-label>Passiva - {{character.data[currentChamp].passive.name}}</ion-label>
        <ion-label>{{character.data[currentChamp].passive.description | filtroChamp}}</ion-label>
@@ -43,7 +43,7 @@
       <div *ngFor="let skill of character.data[currentChamp].spells">
       <ion-row>
         <ion-avatar>
-          <img src="https://ddragon.leagueoflegends.com/cdn/11.11.1/img/spell/{{skill.id}}.png">
+          <img src="http://ddragon.leagueoflegends.com/cdn/11.11.1/img/spell/{{skill.id}}.png">
         </ion-avatar>
         <ion-label>{{skill.name}}</ion-label>
         <ion-label>{{skill.description | filtroChamp}}</ion-label>
