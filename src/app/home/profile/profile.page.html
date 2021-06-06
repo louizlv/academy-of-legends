@@ -1,9 +1,41 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>profile</ion-title>
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+
+    <div *ngIf="loading" style="margin: 0 auto; width:100px">
+    <ion-title class="ion-text-center">
+      <ion-spinner name="crescent"></ion-spinner>
+    </ion-title>
+    </div>
+
+    <div *ngIf="!loading">
+    <ion-title class="ion-text-center">
+      <ion-text style="font-family: LoL Custom Font;">
+        <h1>PERFIL</h1>
+      </ion-text>
+    </ion-title>
+    </div>
+
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content color="secondary">
+<div *ngIf="foundSumm">
+  <ion-card>
+    <ion-item>
+      <img src="//opgg-static.akamaized.net/images/profile_icons/profileIcon4406.jpg" />
+      <ion-label style="font-family: bold LoL Custom Font;">Comèdia</ion-label>
+      <img src="//opgg-static.akamaized.net/images/medals/platinum_4.png" />
+    </ion-item>
+  
+    <ion-card-content>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+    </ion-card-content>
+  </ion-card>
+</div>
 
+<div *ngIf="!foundSumm">
+  <!--Aqui dentro coloca o que mostrar caso não achar o perfil
+  é bom também colocar um botão de voltar e etc-->
+</div>
 </ion-content>
