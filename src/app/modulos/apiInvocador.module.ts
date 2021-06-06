@@ -1,4 +1,5 @@
 export interface apiInvocador{
+    data: string;
 
     invocador: Invocador[];
 
