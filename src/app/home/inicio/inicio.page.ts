@@ -26,10 +26,12 @@ export class InicioPage {
         } catch (e){
           this.result = {
             invocador:[]
+            
           };
         }
         console.log(this.result);
         this.loading = false;
+        
     }
 
 }
