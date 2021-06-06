@@ -21,19 +21,9 @@ export class InicioPage {
 
     public async busca(){
       this.loading = true;
-
-      try {
-        this.result = await this.invocador.buscarInvocador(this.currentSearch);
-        } catch (e){
-          this.result = {
-            invocador:[]
-            
-          };
-        }
-        console.log(this.result);
-        this.loading = false;
-        
-
+      this.result = await this.invocador.buscarInvocador(this.currentSearch);
+      console.log(this.result);
+      this.loading = false;
     }
 
 }
