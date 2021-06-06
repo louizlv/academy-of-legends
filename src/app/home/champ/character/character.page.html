@@ -31,10 +31,10 @@
 
       <ion-row>
         <ion-avatar>
-          <img src="https://ddragon.leagueoflegends.com/cdn/11.8.1/img/passive/{{character.data[currentChamp].passive.image.full}}">
+          <img src="https://ddragon.leagueoflegends.com/cdn/11.11.1/img/passive/{{character.data[currentChamp].passive.image.full}}">
         </ion-avatar>
       <ion-label>Passiva - {{character.data[currentChamp].passive.name}}</ion-label>
-       <ion-label>{{character.data[currentChamp].passive.description | filtroChamp }}</ion-label>
+       <ion-label>{{character.data[currentChamp].passive.description | filtroChamp}}</ion-label>
       </ion-row>
       <ion-col>
         <h1>_________________________</h1>
@@ -43,10 +43,10 @@
       <div *ngFor="let skill of character.data[currentChamp].spells">
       <ion-row>
         <ion-avatar>
-          <img src="https://ddragon.leagueoflegends.com/cdn/11.8.1/img/spell/{{skill.id}}.png">
+          <img src="https://ddragon.leagueoflegends.com/cdn/11.11.1/img/spell/{{skill.id}}.png">
         </ion-avatar>
         <ion-label>{{skill.name}}</ion-label>
-        <ion-label>{{skill.description}}</ion-label>
+        <ion-label>{{skill.description | filtroChamp}}</ion-label>
       </ion-row>
       <ion-col>
         <h1>_________________________</h1>

@@ -82,10 +82,8 @@ export class CharacterPage {
 
   public async loadChamp() {
     const url = 'http://ddragon.leagueoflegends.com/cdn/11.11.1/data/pt_BR/champion/' + this.currentChamp + '.json';
-    console.log(url);
     const result = await this.http.get<Character>(url).toPromise();
     this.character = result;
-    console.log(result);
     this.saveInfo();
     } 
 
