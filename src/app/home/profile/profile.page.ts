@@ -1,16 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { apiInvocador } from 'src/app/modulos/apiInvocador.module';
 
-export interface Invocador{
-  id : string;
-  acount_id : string;
-  nome : string;
+
+import { HttpClient } from '@angular/common/http';
+
+
+export interface Summoner {
+  id:            string;
+  accountId:     string;
+  puuid:         string;
+  name:          string;
   profileIconId: number;
-  summonerLevel : string;
-  revisionDate : number;
+  revisionDate:  number;
+  summonerLevel: number;
 }
-
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
@@ -18,30 +21,40 @@ export interface Invocador{
 })
 export class ProfilePage  {
   
-  public summoner;
-  public invocadorId: string;
-  public invocadorNome: string;
-  public id_conta: string;
-  public nivel_invocador: number;
-  
   public currentSummoner: string;
 
-  constructor(private route: ActivatedRoute, private invocador: apiInvocador) {
-    this.currentSummoner = route.snapshot.paramMap.get('id');
-}
+  
+  public currentSumm: string;
+  public foundSumm: boolean;
+  public loading: boolean;
+  public accId: string;
+  public summoner: Summoner;
 
-public async saveInfo(){
+  constructor(private http: HttpClient, private route: ActivatedRoute) {
+    this.currentSumm = route.snapshot.paramMap.get('id');
+    this.loading = true;
+    this.loadSumm();
+   }
 
-  this.invocadorId = this.invocador.data[this.currentSummoner].id;
-  this.id_conta = this.invocador.data[this.currentSummoner].acount_id;
-  this.invocadorNome = this.invocador.data[this.currentSummoner].invocadorNome;
-  this.nivel_invocador = this.invocador.data[this.currentSummoner].summonerLevel;
-  this.summoner= {
-   nome: this.invocadorNome,
-   id: this.id_conta,
-   link: 'home/inicio/' + this.invocadorId
-  };
-}
+  public async loadSumm() {
+    try {
+      const url = '//cors-anywhere.herokuapp.com/https://br1.api.riotgames.com/lol/summoner/v4/summoners/by-name/' + this.currentSumm + '?api_key=RGAPI-e0eb6e09-1b68-4703-9114-f588232614ce'
+      const result = await this.http.get<Summoner>(url).toPromise();
+      this.summoner = result
+      this.foundSumm = true;
+      this.loading = false;
+    } catch (error) {
+      this.foundSumm = false;
+      this.loading = false;
+    }
+      console.log(this.currentSumm)
+      console.log(this.summoner)
+    } 
+
+  public async saveInfo() {
+
+  }
+
 
   ngOnInit() {
   }

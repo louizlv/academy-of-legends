@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { apiInvocador } from 'src/app/modulos/apiInvocador.module';
-import { InvocadorService } from 'src/app/services/invocador.service';
 
 @Component({
   selector: 'app-inicio',
@@ -8,22 +6,8 @@ import { InvocadorService } from 'src/app/services/invocador.service';
   styleUrls: ['./inicio.page.scss'],
 })
 export class InicioPage {
-
   public currentSearch = '';
-  public result: apiInvocador = null;
-  public loading = false;
-
-
-  constructor(
-    private invocador: InvocadorService
-  ) { }
-
-    public async busca(){
-      this.loading = true;
-      this.result = await this.invocador.buscarInvocador(this.currentSearch);
-      console.log(this.result);
-      this.loading = false;
-    }
+  constructor() { }
 
 }
 

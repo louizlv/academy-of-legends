@@ -5,13 +5,9 @@ import { ProfilePage } from './profile.page';
 
 const routes: Routes = [
   {
-    path: '',
+    path: ':id',
     component: ProfilePage
-  },
-  {
-    path: 'summoner',
-    loadChildren: () => import('./summoner/summoner.module').then( m => m.SummonerPageModule)
-  },
+  }
 ];
 
 @NgModule({
