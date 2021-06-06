@@ -9,6 +9,10 @@
 </ion-header>
 
 <ion-content class="card-background-page" class="no-scroll" color="secondary">
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
     <div *ngIf="isFavorite">
     <ion-col>
       <ion-title style="font-family: bold LoL Custom Font;">CAMPEÃO FAVORITO</ion-title>
@@ -108,7 +112,7 @@
         </ion-card>
       </ion-slide>
       <ion-slide>
-        <ion-card routerLink="/home/champ/character/Maoki">
+        <ion-card routerLink="/home/champ/character/Maokai">
           <img src="https://lolg-cdn.porofessor.gg/img/champion-icons/11.8/64/57.png">
           <div><span>MAOKAI</span></div> 
         </ion-card>

@@ -15,6 +15,16 @@ export class ChampPage {
   isFavorite:boolean;
 
   constructor(private storage: Storage) {
+    this.refreshFav();
+   }
+
+  slidecamp ={
+    slidesPerView: 'auto',
+    concenteredSlides:true,
+    spaceBetween: 10
+  };
+
+  public refreshFav() {
     this.storage.get('favorites')
     .then((res:any) => {
       if (res) {
@@ -25,12 +35,13 @@ export class ChampPage {
       this.link = res.link,
       this.link != null? this.isFavorite = true: this.isFavorite = false
       }}) 
-   }
+  }
 
-  slidecamp ={
-    slidesPerView: 'auto',
-    concenteredSlides:true,
-    spaceBetween: 10
-  };
+  doRefresh( event ) {
+    setTimeout(() => {
+      this.refreshFav();
+      event.target.complete();
+    }, 1500 );
+  }
 
 }
