@@ -17,13 +17,14 @@ export class ChampPage {
   constructor(private storage: Storage) {
     this.storage.get('favorites')
     .then((res:any) => {
+      if (res) {
       res = res[0]
       this.champfav = res,
       this.nome = res.nome,
       this.photo = res.photo,
       this.link = res.link,
       this.link != null? this.isFavorite = true: this.isFavorite = false
-      }) 
+      }}) 
    }
 
   slidecamp ={
