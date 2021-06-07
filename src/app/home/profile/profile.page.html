@@ -34,28 +34,30 @@
         <img src="//raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{mainsId[0]}}.png" />
       </ion-avatar>
       <h1>{{main0.name}}</h1>
+      <ion-badge slot="end" color="primary" mode="ios">Maestria Nv. {{masteries[0].championLevel}}</ion-badge>
     </ion-item>
     <ion-item>
       <ion-avatar slot="start">
         <img src="//raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{mainsId[1]}}.png" />
       </ion-avatar>
       <h1>{{main1.name}}</h1>
+      <ion-badge slot="end" color="primary" mode="ios">Maestria Nv. {{masteries[1].championLevel}}</ion-badge>
     </ion-item>
     <ion-item>
       <ion-avatar slot="start">
         <img src="//raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{mainsId[2]}}.png" />
       </ion-avatar>
       <h1>{{main2.name}}</h1>
+      <ion-badge slot="end" color="primary" mode="ios">Maestria Nv. {{masteries[2].championLevel}}</ion-badge>
     </ion-item>
   </ion-card>
 </div>
  
-<div *ngIf="!foundSumm">
-  <ion-button slot="start" >
-    <ion-icon slot="icon-only"  name="return-up-back-outline"></ion-icon>
+<div *ngIf="!foundSumm && !loading">
+  <ion-button expand="block" routerLink="/home/inicio">
+    <ion-icon slot="start" name="return-up-back-outline"></ion-icon>
+    <ion-text style="font-family: bold LoL Custom Font;">Invocador não encontrado</ion-text>
   </ion-button>
-  <ion-text style="font-family: bold LoL Custom Font;">Invocador não encontrado</ion-text>
-
 </div>
 </ion-content>
  
