@@ -9,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FiltroChampPipe } from './pipes/filtro-champ.pipe'
 
 @NgModule({
-  declarations: [AppComponent, FiltroChampPipe],
+  declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule,
      IonicModule.forRoot(), 
