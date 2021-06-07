@@ -12,9 +12,15 @@ export class FiltroChampPipe implements PipeTransform {
     let result = value.replace(/<br>/g,'');
     result = result.replace(/<font color='#FFF673'>/g,'');
     result = result.replace(/<font color='#9b0f5f'>/g,'');
+    result = result.replace(/<font color='#91d7ee'>/g,'');
+    result = result.replace(/<font color='#00DD33'>/g,'');
+    result = result.replace('</font>','');
+    result = result.replace('</font>','');
+    result = result.replace('</font>','');
     result = result.replace('</font>','');
     result = result.replace('</font>','');
     result = result.replace(/<physicalDamage>/g,'');
+    result = result.replace('</physicalDamage>','');
     result = result.replace('</physicalDamage>','');
     return result;
   }
