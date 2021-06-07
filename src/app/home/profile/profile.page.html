@@ -1,12 +1,12 @@
 <ion-header class="ion-no-border">
   <ion-toolbar color="primary">
-
+ 
     <div *ngIf="loading" style="margin: 0 auto; width:100px">
     <ion-title class="ion-text-center">
       <ion-spinner name="crescent"></ion-spinner>
     </ion-title>
     </div>
-
+ 
     <div *ngIf="!loading">
     <ion-title class="ion-text-center">
       <ion-text style="font-family: LoL Custom Font;">
@@ -14,28 +14,48 @@
       </ion-text>
     </ion-title>
     </div>
-
+ 
   </ion-toolbar>
 </ion-header>
-
+ 
 <ion-content color="secondary">
-<div *ngIf="foundSumm">
+<div *ngIf="foundSumm && !loading">
   <ion-card>
     <ion-item>
-      <img src="//opgg-static.akamaized.net/images/profile_icons/profileIcon4406.jpg" />
-      <ion-label style="font-family: bold LoL Custom Font;">Comèdia</ion-label>
-      <img src="//opgg-static.akamaized.net/images/medals/platinum_4.png" />
+      <img src="//raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/{{summoner.profileIconId}}.jpg" />
+      <ion-label style="font-family: bold LoL Custom Font;">{{summoner.name}}</ion-label>
+      <ion-badge color="primary" mode="ios">{{summoner.summonerLevel}}</ion-badge>
     </ion-item>
-  
-    <ion-card-content>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-    </ion-card-content>
+    <ion-col>
+      <ion-title style="font-family: bold LoL Custom Font;">CAMPEÕES MAIS JOGADOS</ion-title>
+    </ion-col>
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="//raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{mainsId[0]}}.png" />
+      </ion-avatar>
+      <h1>{{main0.name}}</h1>
+    </ion-item>
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="//raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{mainsId[1]}}.png" />
+      </ion-avatar>
+      <h1>{{main1.name}}</h1>
+    </ion-item>
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="//raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{mainsId[2]}}.png" />
+      </ion-avatar>
+      <h1>{{main2.name}}</h1>
+    </ion-item>
   </ion-card>
 </div>
-
+ 
 <div *ngIf="!foundSumm">
-  <!--Aqui dentro coloca o que mostrar caso não achar o perfil
-  é bom também colocar um botão de voltar e etc-->
+  <ion-button slot="start" >
+    <ion-icon slot="icon-only"  name="return-up-back-outline"></ion-icon>
+  </ion-button>
+  <ion-text style="font-family: bold LoL Custom Font;">Invocador não encontrado</ion-text>
+
 </div>
 </ion-content>
+ 
