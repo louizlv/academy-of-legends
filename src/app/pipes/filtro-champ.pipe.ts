@@ -22,6 +22,8 @@ export class FiltroChampPipe implements PipeTransform {
     result = result.replace(/<physicalDamage>/g,'');
     result = result.replace('</physicalDamage>','');
     result = result.replace('</physicalDamage>','');
+    result = result.replace('</keywordMajor>','');
+    result = result.replace('<keywordMajor>','');
     return result;
   }
 
