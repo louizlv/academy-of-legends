@@ -32,6 +32,10 @@ export interface Info {
 export interface Passive {
   name:        string;
   description: string;
+  image: Image;
+}
+export interface Image {
+  full:   string;
 }
 export interface Skin {
   id:      string;
@@ -51,7 +55,7 @@ export interface Spell {
 })
 export class CharacterPage {
 
-  public champhere;
+  public champhere: any;
   public character: Character;
   public currentChamp: string;
   public favorite: boolean;
