@@ -48,7 +48,7 @@ export class ProfilePage implements OnInit {
  
   public async loadSumm() {
     try {
-      const urlacc = '//cors-anywhere.herokuapp.com/https://br1.api.riotgames.com/lol/summoner/v4/summoners/by-name/' + this.currentSumm + '?api_key=RGAPI-ec9d9138-f367-4d7f-a96b-3c4377dd6ed5'
+      const urlacc = '//cors-anywhere.herokuapp.com/https://br1.api.riotgames.com/lol/summoner/v4/summoners/by-name/' + this.currentSumm + '?api_key=RGAPI-4b091144-f4b1-48e5-ba0a-e1a484f8818e'
       const resultacc = await this.http.get<Summoner>(urlacc).toPromise();
       this.summoner = resultacc
       this.foundSumm = true;
@@ -63,7 +63,7 @@ export class ProfilePage implements OnInit {
  
   public async takeMasteries() {
     this.accId = this.summoner.id
-    const urlmaster = '//cors-anywhere.herokuapp.com/https://br1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/' + this.accId + '?api_key=RGAPI-ec9d9138-f367-4d7f-a96b-3c4377dd6ed5'
+    const urlmaster = '//cors-anywhere.herokuapp.com/https://br1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/' + this.accId + '?api_key=RGAPI-4b091144-f4b1-48e5-ba0a-e1a484f8818e'
     const resultmaster = await this.http.get<Mastery>(urlmaster).toPromise();
     this.masteries = resultmaster
     console.log(this.masteries)
