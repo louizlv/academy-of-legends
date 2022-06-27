@@ -1,6 +1,8 @@
 Academy of Legends é um aplicativo de utilidades voltado aos jogadores de League of Legends, 
 e é um projeto da disciplina Computação para Dispositivos Móveis da Universidade Anhembi Morumbi.
 
+Disponível em: https://ionic-academyoflegends.netlify.app (Pode estar com alguns itens fora de funcionamento, já que a API do League of Legends altera alguns aspectos à cada atualização, e necessita de uma certa permissão)
+
 O grupo é composto por:
 - Bruno Oliveira;
 - Caio Prates Dias;
